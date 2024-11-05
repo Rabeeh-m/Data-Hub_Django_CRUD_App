@@ -1,0 +1,63 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+
+    <div class="card">
+
+
+        <div class="card-buddy">
+ 
+            <br>
+            &nbsp;
+            <i class="fa-regular fa-user"></i>
+
+                    <strong>
+
+            &nbsp;{{record.first_name|upper}}
+
+            {{record.last_name|upper}}
+
+
+        </strong>
+
+        <hr>
+
+                <p><strong> &nbsp;ID:</strong> {{record.id}}</p>
+
+                <p><strong> &nbsp;Email:</strong> {{record.email}}</p>
+
+                <p><strong> &nbsp;Phone number:</strong> {{record.phone}}</p>
+
+                <p><strong> &nbsp;Address:</strong> {{record.address}}</p>
+
+                <p><strong> &nbsp;City:</strong> {{record.city}}</p>
+
+                <p><strong> &nbsp;Province:</strong> {{record.province}}</p>
+
+                <p><strong> &nbsp;Country:</strong> {{record.country}}</p>
+
+                <p><strong> &nbsp;Creation_date:</strong>{{record.creation_date}}</p>
+
+
+        </div>
+
+
+
+    </div>
+
+    <br>
+
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary">Return
+         &nbsp; <i class="fa-solid fa-arrow-left"></i> </a>
+
+    &nbsp;
+
+    <a href="{% url 'update-record'  record.id %}" class="btn btn-info">Update record
+         &nbsp; <i class="fa-solid fa-plus"></i></a>
+
+    &nbsp;
+
+    <a href="{% url 'delete-record' pk=record.id %}" class="btn btn-danger">Delete 
+        &nbsp; <i class="fa-solid fa-trash"></i></a>
+
+{% endblock %}
